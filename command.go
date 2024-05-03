@@ -30,7 +30,7 @@ func sendCommand(apiKey, deviceUUID, secretKey string, command Command) error {
 		"x-api-key": apiKey,
 	}
 
-	history := fmt.Sprintf("command:%d,api:%s", command, ApiBaseURL)
+	history := fmt.Sprintf("call api. command:%d", command)
 	encodedHistory := base64.StdEncoding.EncodeToString([]byte(history))
 
 	sign, err := generateCMAC(secretKey)
